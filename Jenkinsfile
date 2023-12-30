@@ -8,7 +8,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('your-aws-secret-access-key')
         APPLICATION_NAME = 'Nodejs'
         ENVIRONMENT_NAME = 'Nodejs-env'
-        S3_BUCKET = 'elasticbeanstalk-us-east-2-006095271778' // Give your s3 name created by aws beanstalk
+        S3_BUCKET = 'elasticbeanstalk-ap-south-1-068953489573' // Give your s3 name created by aws beanstalk
         SOURCE_BUNDLE_NAME = 'node_modules.zip'
     }
 
