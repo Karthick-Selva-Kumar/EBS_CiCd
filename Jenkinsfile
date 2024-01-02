@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // You need to change region,access key and secret key of yours
-        //AWS_REGION = 'ap-south-1'
+        AWS_REGION = 'ap-south-1'
         //AWS_ACCESS_KEY_ID = credentials('AKIARADPSYCSQU6GUSGC')
         //AWS_SECRET_ACCESS_KEY = credentials('ZehT4BX91UPwRWjhUElzAkkr5Sw+CC4rASNPDgBe')
         APPLICATION_NAME = 'Nodejs'
@@ -48,7 +48,7 @@ pipeline {
                     script {
                     // Deploy the application to Elastic Beanstalk
                         sh "aws s3 cp $SOURCE_BUNDLE_NAME s3://$S3_BUCKET/$SOURCE_BUNDLE_NAME"
-                        sh "aws elasticbeanstalk create-application-version --application-name $APPLICATION_NAME --version-label $BUILD_NUMBER --source-bundle S3Bucket=$S3_BUCKET,S3Key=$SOURCE_BUNDLE_NAME"
+                        sh "aws elasticbeanstalk create-application-version --application-name $APPLICATION_NAME --version-label $BUILD_NUMBER --source-bundle S3Bucket=$S3_BUCKET,S3Key=$SOURCE_BUNDLE_NAME --region $AWS_REGION"
                         sh "aws elasticbeanstalk update-environment --application-name $APPLICATION_NAME --environment-name $ENVIRONMENT_NAME --version-label $BUILD_NUMBER"
                     }   
                 }
