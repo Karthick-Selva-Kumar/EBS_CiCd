@@ -43,7 +43,7 @@ pipeline {
             steps {
                 // Change the crendentialId into your id on jenkins credentials stored
                 withCredentials([
-                    [$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'AWS', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']
+                    [$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'AWS']
                 ]) {
                     script {
                     // Deploy the application to Elastic Beanstalk
