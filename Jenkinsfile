@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // You need to change region,access key and secret key of yours
-        AWS_REGION = 'ap-south-1'
+        //AWS_REGION = 'ap-south-1'
         //AWS_ACCESS_KEY_ID = credentials('AKIARADPSYCSQU6GUSGC')
         //AWS_SECRET_ACCESS_KEY = credentials('ZehT4BX91UPwRWjhUElzAkkr5Sw+CC4rASNPDgBe')
         APPLICATION_NAME = 'Nodejs'
